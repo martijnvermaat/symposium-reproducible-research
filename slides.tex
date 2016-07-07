@@ -1,0 +1,267 @@
+\documentclass[slidestop]{beamer}
+
+\author{Martijn Vermaat}
+% Note that the beamer theme doesn't support such long titles, so the title is
+% copied verbatim in beamerthemelumc.sty. Sorry about that.
+\title{Transparency and reproducibility in computational analyses}
+\providecommand{\mySubTitle}{Symposium on reproducible research}
+\providecommand{\myConference}{Research ICT - Solid Basis for Research}
+\providecommand{\myDate}{07-07-2016}
+\providecommand{\myLongDate}{LUMC, 7 July 2016}
+\providecommand{\myGroup}{Human Genetics}
+\providecommand{\myCenter}{Leiden University Medical Center}
+
+\usetheme{lumc}
+
+\begin{document}
+
+% This disables the \pause command, handy in the editing phase.
+%\renewcommand{\pause}{}
+
+\makeTitleSlide\
+
+\section{Introduction}
+
+\subsection{Reproducibility}
+\begin{pframe}
+  Ability to duplicate an entire study.
+  \begin{itemize}
+    \item By the same researcher
+    \item By someone else independently
+  \end{itemize}
+
+  \bigskip
+  \pause
+  Ability to create new work based on it.
+
+  \bigskip
+  \pause
+  One of the main principles of the {\bf scientific method}.
+
+  % reproducible research: product of academic research is paper along with
+  % complete computational environment
+\end{pframe}
+
+\subsection{Computational analysis}
+\begin{pframe}
+  Typical ingredients:
+  \begin{itemize}
+    \item Data
+    \item Code
+    \item Results
+  \end{itemize}
+
+  \bigskip
+  \pause
+  These need {\bf provenance}.
+
+  \bigskip
+  \pause
+  True reproducibility may also need: hardware, configuration, documentation,
+  \ldots
+\end{pframe}
+
+\subsection{What we want to prevent}
+\begin{pframe}
+  \vskip-1.5em
+  \begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{data}
+  \end{figure}
+  % this is still pretty good
+  % - on c:\ drive in easy to guess location
+  % - seems to just have started
+  % - no usb drives
+  % - junk is separate
+  % - notes and data are together
+  % - no collaboration mess yet
+  % - where are all the emails/chat logs/meeting notes
+\end{pframe}
+
+\section{Version control}
+
+\subsection{What is it?}
+\begin{pframe}
+  \emph{The management of changes to documents, computer programs, large web
+  sites, and other collections of information.} --- Wikipedia.
+  \bigskip
+  \pause
+
+  Main features of modern version control systems:
+  \begin{enumerate}
+    \item Keep track of files and their changes over time
+    \item Enable collaboration
+  \end{enumerate}
+\end{pframe}
+
+\subsection{Main features}
+\begin{pframe}
+  For a single user:
+  \begin{itemize}
+    \item Revert files to a previous state
+    \item Revert the entire project back to a previous state
+    \item Review changes made over time
+    \item Backup
+  \end{itemize}
+  \bigskip
+  \pause
+
+  For multiple users:
+  \begin{itemize}
+    \item A reliable way to share files between people/computers
+    \item Allow multiple people working on the same project at the same time
+    \item Conflict resolution
+    \item See who made which changes at which time
+  \end{itemize}
+\end{pframe}
+
+\subsection{Software engineering}
+\begin{pframe}
+  The use of version control is common practice here.
+
+  \bigskip
+  Today all software is being developed with version control.
+
+  \bigskip
+  \pause
+  What is being controlled? {\bf source code}
+
+  \bigskip
+  Most version control systems are tailored to or originate from software
+  engineering.
+\end{pframe}
+
+\subsection{Computational analysis}
+\begin{pframe}
+  Version control systems can help with provenance.
+
+  \bigskip
+  \pause
+  \begin{itemize}
+    \item Data
+    \item Code
+    \item Results
+  \end{itemize}
+
+  We can version control all of them.
+\end{pframe}
+
+\section{GitLab}
+
+\subsection{https://git.lumc.nl}
+\begin{pframe}
+  User-friendly collaboration platform for the {\bf git} version control
+  system.
+
+  \bigskip
+  But powerful for the technical user.
+
+  \bigskip
+  Currently serving {\bf 388 users} and {\bf 1,010 projects}.
+\end{pframe}
+
+\subsection{Collaboration}
+\begin{pframe}
+  \bigskip
+  Fine-grained access model.
+  \begin{itemize}
+    \item Connected to LUMC Active Directory (your email account)
+    \item Open to outside collaborators
+    \item Groups and permissions per project
+  \end{itemize}
+
+  \bigskip
+  \pause
+  Collaborate on projects.
+  \begin{itemize}
+    \item Work together on computational analyses
+    \item Share analysis results
+    \item Issue tracking
+    \item Wiki
+  \end{itemize}
+\end{pframe}
+
+\subsection{Example of a project history}
+\begin{pframe}
+  \begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{gitlab}
+  \end{figure}
+\end{pframe}
+
+\subsection{Complete computational analyses}
+\begin{pframe}
+  GitLab can track code as wel as documentation.
+
+  \bigskip
+  Large data can also be tracked (but requires more technical knowledge).
+
+  \bigskip
+  Integration with IPython/Jupyter Notebook, an interactive computational
+  environment.
+\end{pframe}
+
+\subsection{Example of an IPython Notebook}
+\begin{pframe}
+  \begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{ipynb}
+  \end{figure}
+\end{pframe}
+
+\section{Infrastructure}
+\subsection{Beyond GitLab}
+\begin{pframe}
+  We need shared infrastructure that is secure but transparent to foster
+  collaboration.
+
+  \bigskip
+  Examples:
+  \begin{itemize}
+    \item LUMC Shark compute cluster and storage
+    \item SURFsara HPC cloud as used by RP3/BIOS consortium
+    \item Reproducible research in BBMRI2
+  \end{itemize}
+\end{pframe}
+
+\subsection{Tools don't guarantee success}
+\begin{pframe}
+  We try to supplement technical infrastructure with:
+  \begin{itemize}
+    \item Experience
+    \item Developing best practices
+    \item Education
+  \end{itemize}
+\end{pframe}
+
+\section{Course}
+
+\subsection{Code and data management with Git}
+\begin{pframe}
+  Introduction to working with the Git version control system.
+
+  \bigskip
+  For computational analysis.
+
+  \bigskip
+  Aimed primarily at researchers in the LUMC.
+
+  \bigskip
+  {\bf https://git.lumc.nl/humgen/gitcourse}
+\end{pframe}
+
+\makeAcknowledgementsSlide{
+  \begin{tabular}{l}
+    Michel Villerius\\
+    Wibowo Arindrarto\\
+    Szymon Kie\l{}basa\\
+    Jeroen Laros\\
+    Marco Roos\\
+    Peter-Bram 't Hoen\\[2em]
+
+    {\small Slides 4, 5, 10, 12 are adapted from Jeroen Laros}
+  \end{tabular}
+  \bigskip
+}
+
+\end{document}
